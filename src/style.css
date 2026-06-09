@@ -1,0 +1,59 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0a0c10;
+  --surface:  #111318;
+  --surface2: #181c24;
+  --border:   #232733;
+  --border2:  #2e3340;
+  --text:     #e8eaf0;
+  --muted:    #6b7280;
+  --muted2:   #9ca3af;
+  --accent:   #7c6af7;
+  --accent-g: #a78bfa;
+  --danger:   #f87171;
+  --success:  #4ade80;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app { height: 100%; }
+
+.syne { font-family: 'Syne', sans-serif; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-g));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* Spinner */
+.spinner {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(124, 106, 247, 0.3);
+  border-top-color: var(--accent);
+  animation: spin .7s linear infinite; display: inline-block;
+}
+.spinner.white { border-color: rgba(255,255,255,0.3); border-top-color: #fff; }
+.spinner.sm    { width: 14px; height: 14px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Base buttons */
+button { font-family: inherit; }
+a { color: inherit; text-decoration: none; }
